@@ -1,0 +1,14 @@
+services:
+  backend:
+    image: aditya9325/backend
+    ports:
+      - 5000:4000
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    image: aditya9325/frontend
+    ports:
+      - 5173:5173
+    depends_on:
+      - backend
